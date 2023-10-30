@@ -14,7 +14,7 @@ namespace CollectionsExe.Collections.Exercise
 
         //Targil 1 - write the Property of StudentList called Students
         #region Properties
-       public List<Student> Students {get; set;}
+       public List<Student> Students {set; get;}
 
         #endregion
 
