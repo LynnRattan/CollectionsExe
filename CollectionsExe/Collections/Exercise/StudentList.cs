@@ -14,7 +14,7 @@ namespace CollectionsExe.Collections.Exercise
 
         //Targil 1 - write the Property of StudentList called Students
         #region Properties
-       
+       public List<Student> Students {get; set;}
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace CollectionsExe.Collections.Exercise
         #region Constructor
         public StudentList()
         {
-
+            Students = Student.FillList();
         }
         #endregion
 
@@ -34,6 +34,11 @@ namespace CollectionsExe.Collections.Exercise
 
         public Student FindStudentByName(string name)
         {
+            for(int i =0; i<Students.Length;i++)
+            {
+                if (Students[i].GetName()==name)
+                    return Students[i];
+            }
             return null;
         }
         #endregion
@@ -42,7 +47,17 @@ namespace CollectionsExe.Collections.Exercise
         //Targil 4-  write a method which retrieves a list of Students By Kita
         public List<Student> GetStudentsByKits(string kita)
         {
-            return null;
+            int count=0;
+           List<Student> KitaStudents = new List[count];
+            for(int i = 0; i<Student.Length; i++)
+         {
+               if(Students[i].GetKita() == kita) 
+               {
+                   KitaStudents[count] = Students[i].GetKita();
+                   count++;
+               }
+         }      
+            return KitaStudents;
         }
         #endregion
 
